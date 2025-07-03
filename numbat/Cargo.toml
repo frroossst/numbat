@@ -39,7 +39,8 @@ rand = "0.9"
 strfmt = "0.2.4"
 indexmap = "2.2.6"
 mendeleev = "0.8.1"
-plotly = { version = "0.12.0", optional = true }
+# plotly = { version = "0.12.0", optional = true }
+plotly = { git = "https://github.com/plotly/plotly.rs", branch = "main" , optional = true }
 compact_str = { version = "0.9.0", features = ["serde"] }
 
 [features]
