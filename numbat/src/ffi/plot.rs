@@ -90,9 +90,21 @@ fn bar_chart(mut args: Args) -> Plot {
 
 #[cfg(feature = "plotting")]
 fn show_plot(plot: Plot) -> CompactString {
-    plot.show();
+    #[cfg(target_os = "android")]
+    {
+        let _ = plot;
+        // this fixes an error as plotly cannot compile on android due to 
+        // cfg directives
+        // https://github.com/plotly/plotly.rs/issues/282
+        unimplemented!("cannot show_plot on android")
+    }
 
-    CompactString::const_new("Plot will be opened in the browser")
+    #[cfg(not(target_os = "android"))]
+    {
+        plot.show();
+
+        CompactString::const_new("Plot will be opened in the browser")
+    }
 }
 
 #[cfg(feature = "plotting")]
