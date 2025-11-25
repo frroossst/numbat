@@ -1251,6 +1251,7 @@ dependencies = [
  "predicates",
  "rustyline",
  "serde",
+ "termcolor",
  "terminal_size",
  "toml",
 ]
