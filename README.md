@@ -1,3 +1,5 @@
+# ⚠️ This version works on android and that's the only difference !
+
 <div align="center">
 
 <img src="numbat-wasm/www/numbat.svg">
